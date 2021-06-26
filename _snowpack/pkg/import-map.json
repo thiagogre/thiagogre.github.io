@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "@emotion/css": "./@emotion/css.js",
+    "react": "./react.js",
+    "react-dom": "./react-dom.js",
+    "rescript/lib/es6/belt_Array.js": "./rescript/lib/es6/belt_Array.js",
+    "rescript/lib/es6/belt_Option.js": "./rescript/lib/es6/belt_Option.js",
+    "rescript/lib/es6/caml_option.js": "./rescript/lib/es6/caml_option.js"
+  }
+}
