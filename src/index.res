@@ -12,7 +12,9 @@ Emotion.injectGlobal(`
     box-sizing: border-box;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inconsolata', monospace;
+  display: flex;
+  flex-direction: column;
 }`)
 
 ReactDOM.render(
