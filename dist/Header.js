@@ -31,9 +31,17 @@ var item = Css.css({
 var link = Css.css({
   position: "relative"
 });
-var logo = Css.css({
+var containerLogo = Css.css({
+  display: "flex",
+  alignItems: "center"
+});
+var titleLogo = Css.css({
   color: Color$Web.light,
   fontSize: FontSize$Web.large
+});
+var logo = Css.css({
+  height: 30,
+  marginRight: 5
 });
 var Styles = {
   container,
@@ -41,6 +49,8 @@ var Styles = {
   list,
   item,
   link,
+  containerLogo,
+  titleLogo,
   logo
 };
 var items = [
@@ -67,9 +77,14 @@ function Header(Props) {
     className: container
   }, React.createElement("div", {
     className: row
-  }, React.createElement("h1", {
-    className: logo
-  }, "thiagogre"), React.createElement("nav", void 0, React.createElement("ul", {
+  }, React.createElement("div", {
+    className: containerLogo
+  }, React.createElement("img", {
+    className: logo,
+    src: "../assets/images/lambda.svg"
+  }), React.createElement("h1", {
+    className: titleLogo
+  }, "thiagogre")), React.createElement("nav", void 0, React.createElement("ul", {
     className: list
   }, content))));
 }
