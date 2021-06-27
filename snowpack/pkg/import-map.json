@@ -5,6 +5,9 @@
     "react-dom": "./react-dom.js",
     "rescript/lib/es6/belt_Array.js": "./rescript/lib/es6/belt_Array.js",
     "rescript/lib/es6/belt_Option.js": "./rescript/lib/es6/belt_Option.js",
-    "rescript/lib/es6/caml_option.js": "./rescript/lib/es6/caml_option.js"
+    "rescript/lib/es6/caml_array.js": "./rescript/lib/es6/caml_array.js",
+    "rescript/lib/es6/caml_int32.js": "./rescript/lib/es6/caml_int32.js",
+    "rescript/lib/es6/caml_option.js": "./rescript/lib/es6/caml_option.js",
+    "rescript/lib/es6/curry.js": "./rescript/lib/es6/curry.js"
   }
 }
