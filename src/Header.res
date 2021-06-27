@@ -3,12 +3,10 @@ module Styles = {
   let container = css({
     "width": "100%",
     "height": 70,
-    "position": "fixed",
-    "boxShadow": "0 4px 2px -2px gray",
+    "boxShadow": "0 5px 10px rgba(255, 255, 255, 0.03)",
   })
   let row = css({
     "margin": "auto",
-    "maxWidth": 1600,
     "display": "flex",
     "justifyContent": "space-around",
     "alignItems": "center",
@@ -23,37 +21,34 @@ module Styles = {
   let item = css({
     "marginLeft": 30,
     "textDecoration": "none",
-    "fontSize": 15,
-    "color": "black",
+    "fontSize": FontSize.medium,
+    "color": Color.light,
     "fontWeight": 600,
   })
   let link = css({
     "position": "relative",
   })
+  let logo = css({
+    "color": Color.light,
+    "fontSize": FontSize.large,
+  })
 }
 
 type item = {href: string, text: string}
 
-let items = [
-  {href: "home", text: "Home"},
-  {href: "about", text: "About"},
-  {href: "academic", text: "Academic"},
-  {href: "skills", text: "Skills"},
-  {href: "hobbies", text: "Hobbies"},
-  {href: "contact", text: "Contact"},
-]
+let items = [{href: "home", text: "Home"}, {href: "about", text: "About"}]
 
 @react.component
 let make = () => {
-  let content = Belt.Array.map(items, item => {
-    <li className=Styles.list>
+  let content = items->Belt.Array.map(item => {
+    <li className=Styles.list key={item.href}>
       <a className=Styles.item href={`#${item.href}`}> {React.string(item.text)} </a>
     </li>
   })
 
   <header className=Styles.container>
     <div className=Styles.row>
-      <h1> {`thiagogre`->React.string} </h1>
+      <h1 className=Styles.logo> {`thiagogre`->React.string} </h1>
       <nav> <ul className=Styles.list> {React.array(content)} </ul> </nav>
     </div>
   </header>
