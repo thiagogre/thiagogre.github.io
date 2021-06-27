@@ -28,9 +28,17 @@ module Styles = {
   let link = css({
     "position": "relative",
   })
-  let logo = css({
+  let containerLogo = css({
+    "display": "flex",
+    "alignItems": "center",
+  })
+  let titleLogo = css({
     "color": Color.light,
     "fontSize": FontSize.large,
+  })
+  let logo = css({
+    "height": 30,
+    "marginRight": 5,
   })
 }
 
@@ -48,7 +56,10 @@ let make = () => {
 
   <header className=Styles.container>
     <div className=Styles.row>
-      <h1 className=Styles.logo> {`thiagogre`->React.string} </h1>
+      <div className=Styles.containerLogo>
+        <img className=Styles.logo src="../assets/images/lambda.svg" />
+        <h1 className=Styles.titleLogo> {"thiagogre"->React.string} </h1>
+      </div>
       <nav> <ul className=Styles.list> {React.array(content)} </ul> </nav>
     </div>
   </header>
