@@ -22,5 +22,5 @@ yarn-error.log*
 /lib
 /types
 .merlin
-*.bs.js
+src/**/*.mjs
 .bsb.lock

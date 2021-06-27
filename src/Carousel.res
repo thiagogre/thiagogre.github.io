@@ -69,7 +69,7 @@ let make = (~slides: array<slide>) => {
   }
 
   React.useEffect(() => {
-    let interval = Js.Global.setInterval(currentSlide, 2000)
+    let interval = Js.Global.setInterval(currentSlide, 5000)
 
     let clearInterval = () => Js.Global.clearInterval(interval)
 
