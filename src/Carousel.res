@@ -12,6 +12,10 @@ module Slide = {
       "justifyContent": "center",
       "margin": 100,
       "padding": 40,
+      "transition": "all 2s ease",
+      ":hover": {
+        "transform": "scale(0.9)",
+      },
       "@media (max-width: 600px)": {
         "margin": "100px 0",
         "padding": 0,
