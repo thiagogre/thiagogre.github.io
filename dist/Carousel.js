@@ -8,10 +8,15 @@ import * as FontSize$Web from "./shared/themes/FontSize.js";
 var carouselSlide = Css.css({
   width: "100%",
   display: "flex",
+  flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
   margin: 100,
-  padding: 40
+  padding: 40,
+  "@media (max-width: 600px)": {
+    margin: "100px 0",
+    padding: 0
+  }
 });
 var container = Css.css({
   display: "flex",
@@ -32,7 +37,8 @@ var shadow = Css.css({
 });
 var title = Css.css({
   color: Color$Web.light,
-  fontSize: FontSize$Web.big
+  fontSize: FontSize$Web.big,
+  marginTop: 20
 });
 var paragraph = Css.css({
   color: Color$Web.light,
@@ -52,19 +58,17 @@ function Carousel$Slide(Props) {
     className: carouselSlide
   }, React.createElement("div", {
     className: container
-  }, React.createElement("h2", {
-    className: title
-  }, slide.title), React.createElement("p", {
-    className: paragraph
-  }, slide.paragraph)), React.createElement("div", {
-    className: container
   }, React.createElement("div", {
     className: shadow
   }, React.createElement("img", {
     className: image,
-    alt: "",
+    alt: slide.title,
     src: slide.image
-  }))));
+  }))), React.createElement("div", {
+    className: container
+  }, React.createElement("h2", {
+    className: title
+  }, slide.title)));
 }
 var Slide = {
   Styles,

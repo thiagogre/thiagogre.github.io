@@ -585,6 +585,14 @@ function ve(c2, s2, u2, i2) {
     }
 }
 
+function memoize(fn) {
+  var cache = Object.create(null);
+  return function (arg) {
+    if (cache[arg] === undefined) cache[arg] = fn(arg);
+    return cache[arg];
+  };
+}
+
 var toRules = function toRules(parsed, points) {
   // pretend we've started with a comma
   var index = -1;
@@ -883,14 +891,6 @@ var unitlessKeys = {
   strokeOpacity: 1,
   strokeWidth: 1
 };
-
-function memoize(fn) {
-  var cache = Object.create(null);
-  return function (arg) {
-    if (cache[arg] === undefined) cache[arg] = fn(arg);
-    return cache[arg];
-  };
-}
 
 var hyphenateRegex = /[A-Z]|^ms/g;
 var animationRegex = /_EMO_([^_]+?)_([^]*?)_EMO_/g;

@@ -12,47 +12,40 @@ var Styles = {
   container
 };
 function App(Props) {
-  return React.createElement(React.Fragment, void 0, React.createElement("div", {
+  return React.createElement("div", {
     className: container
   }, React.createElement(Header$Web.make, {}), React.createElement(Carousel$Web.make, {
     slides: [
       {
         image: "../assets/images/typescript.svg",
-        title: "TypeScript",
-        paragraph: "Typescript experience description"
+        title: "TypeScript"
       },
       {
         image: "../assets/images/react.svg",
-        title: "React",
-        paragraph: "React experience description"
+        title: "React.js and Native"
       },
       {
         image: "../assets/images/rescript.svg",
-        title: "ReScript",
-        paragraph: "Rescript experience description"
+        title: "ReScript"
       },
       {
         image: "../assets/images/electron.svg",
-        title: "Electron",
-        paragraph: "Electron experience description"
+        title: "Electron.js"
       },
       {
         image: "../assets/images/javascript.svg",
-        title: "JavaScript",
-        paragraph: "Javascript experience description"
+        title: "JavaScript"
       },
       {
         image: "../assets/images/next.svg",
-        title: "Next",
-        paragraph: "Next experience description"
+        title: "Next.js"
       },
       {
         image: "../assets/images/nodejs.svg",
-        title: "Node",
-        paragraph: "Node experience description"
+        title: "Node.js"
       }
     ]
-  })));
+  }));
 }
 var make = App;
 export {
