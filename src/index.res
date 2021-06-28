@@ -7,9 +7,9 @@ external accept: unit => unit = "accept"
 
 Emotion.injectGlobal(`
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: 'Inconsolata', monospace;

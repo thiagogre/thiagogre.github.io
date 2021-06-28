@@ -9,7 +9,6 @@ module Styles = {
 
 @react.component
 let make = () => {
-  <>
     <div className=Styles.container>
       <Header />
       <Carousel
@@ -17,40 +16,32 @@ let make = () => {
           {
             image: "../assets/images/typescript.svg",
             title: "TypeScript",
-            paragraph: "Typescript experience description",
           },
           {
             image: "../assets/images/react.svg",
-            title: "React",
-            paragraph: "React experience description",
+            title: "React.js and Native",
           },
           {
             image: "../assets/images/rescript.svg",
             title: "ReScript",
-            paragraph: "Rescript experience description",
           },
           {
             image: "../assets/images/electron.svg",
-            title: "Electron",
-            paragraph: "Electron experience description",
+            title: "Electron.js",
           },
           {
             image: "../assets/images/javascript.svg",
             title: "JavaScript",
-            paragraph: "Javascript experience description",
           },
           {
             image: "../assets/images/next.svg",
-            title: "Next",
-            paragraph: "Next experience description",
+            title: "Next.js",
           },
           {
             image: "../assets/images/nodejs.svg",
-            title: "Node",
-            paragraph: "Node experience description",
+            title: "Node.js",
           },
         ]
       />
     </div>
-  </>
 }

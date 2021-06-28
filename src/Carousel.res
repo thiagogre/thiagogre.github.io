@@ -1,5 +1,5 @@
 type intervalId
-type slide = {image: string, title: string, paragraph: string}
+type slide = {image: string, title: string}
 
 module Slide = {
   module Styles = {
@@ -7,10 +7,15 @@ module Slide = {
     let carouselSlide = css({
       "width": "100%",
       "display": "flex",
+      "flexDirection": "column",
       "alignItems": "center",
       "justifyContent": "center",
       "margin": 100,
       "padding": 40,
+      "@media (max-width: 600px)": {
+        "margin": "100px 0",
+        "padding": 0,
+      },
     })
     let container = css({
       "display": "flex",
@@ -32,6 +37,7 @@ module Slide = {
     let title = css({
       "color": Color.light,
       "fontSize": FontSize.big,
+      "marginTop": 20,
     })
     let paragraph = css({
       "color": Color.light,
@@ -43,11 +49,12 @@ module Slide = {
   let make = (~slide) => {
     <div className=Styles.carouselSlide>
       <div className=Styles.container>
-        <h2 className=Styles.title> {slide.title->React.string} </h2>
-        <p className=Styles.paragraph> {slide.paragraph->React.string} </p>
+        <div className=Styles.shadow>
+          <img className=Styles.image src=slide.image alt=slide.title />
+        </div>
       </div>
       <div className=Styles.container>
-        <div className=Styles.shadow> <img className=Styles.image src=slide.image alt="" /> </div>
+        <h2 className=Styles.title> {slide.title->React.string} </h2>
       </div>
     </div>
   }
