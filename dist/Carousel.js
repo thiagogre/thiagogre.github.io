@@ -7,19 +7,17 @@ import * as Css from "../snowpack/pkg/@emotion/css.js";
 import * as FontSize$Web from "./shared/themes/FontSize.js";
 var carouselSlide = Css.css({
   width: "100%",
+  height: "calc(100vh - 70px)",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  margin: 100,
-  padding: 40,
   transition: "all 2s ease",
   ":hover": {
     transform: "scale(0.9)"
   },
   "@media (max-width: 600px)": {
-    margin: "100px 0",
-    padding: 0
+    height: "calc(100vh - 90px)"
   }
 });
 var container = Css.css({
