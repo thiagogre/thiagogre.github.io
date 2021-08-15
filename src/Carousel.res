@@ -1,5 +1,4 @@
-type intervalId
-type slide = {image: string, title: string}
+open App
 
 module Slide = {
   module Styles = {
