@@ -64,7 +64,7 @@ header span {
     display: flex;
     flex-direction: row;
     background-color: #222222;
-    color: white;
+    color: #ffffff;
 }
 
 .tab {
