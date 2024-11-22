@@ -1,0 +1,105 @@
+<!DOCTYPE html />
+<html Lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <span>File</span>
+        <span>Edit</span>
+        <span>View</span>
+        <span>Search</span>
+        <span>Terminal</span>
+        <span>Tabs</span>
+        <span>Help</span>
+    </header>
+    <div id="tabs">
+        <div class="tab active" data-id="neofetch">
+            <div><span>~/github.com/thiagogre</span></div>
+            <div><span>x</span></div>
+        </div>
+        <div class="tab" data-id="wip">
+            <div><span>~/github.com/thiagogre</span></div>
+            <div><span>x</span></div>
+        </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <main id="neofetch" class="active">
+        <div>
+            <b>(venv)</b> <span class="green"><b>thiago@debian</b></span>:<span
+                class="blue"><b>~/github.com/thiagogre</b></span><b>$ neofetch</b>
+            <div class="row">
+                <pre>
+<b>       _,met$$$$$gg.</b>
+<b>    ,g$$$$$$$$$$$$$$$P.</b>
+<b>  ,g$$P&quot;     &quot;&quot;&quot;Y$$.&quot;.</b>
+<b> ,$$P&apos;              `$$$.</b>
+<b>&apos;,$$P       ,ggs.     `$$b:</b>
+<b>`d$$&apos;     ,$P&quot;&apos;   </b><span class="red"><b>.</b></span><b>    $$$</b>
+<b> $$P      d$&apos;     </b><span class="red"><b>,</b></span><b>    $$P</b>
+<b> $$:      $$.   </b><span class="red"><b>-</b></span><b>    ,d$$&apos;</b>
+<b> $$;      Y$b._   _,d$P&apos;</b>
+<b> Y$$.    </b><span class="red"><b>`.</b></span><b>`&quot;Y$$$$P&quot;&apos;</b>
+<b> `$$b      </b><span class="red"><b>&quot;-.__</b></span>
+<b>  `Y$$</b>
+<b>   `Y$$.</b>
+<b>     `$$b.</b>
+<b>       `Y$$b.</b>
+<b>          `&quot;Y$b._</b>
+<b>              `&quot;&quot;&quot;</b>
+                </pre>
+                <pre>
+    <span class="red"><b>thiago</b></span><b>@</b><span class="red"><b>debian</b></span>
+    <b>-------------</b>
+    <span class="red"><b>OS</b></span><b>: Debian GNU/Linux 12 (bookworm) x86_64</b>
+    <span class="red"><b>Host</b></span><b>: Nitro AN515-54 V1.30</b>
+    <span class="red"><b>Kernel</b></span><b>: 6.1.0-23-amd64</b>
+    <span class="red"><b>Uptime</b></span><b>: 2 hours, 19 mins</b>
+    <span class="red"><b>Packages</b></span><b>: 2225 (dpkg), 7 (flatpak)</b>
+    <span class="red"><b>Shell</b></span><b>: bash 5.2.15</b>
+    <span class="red"><b>Resolution</b></span><b>: 1920x1080, 1920x1080</b>
+    <span class="red"><b>DE</b></span><b>: Cinnamon 5.6.8</b>
+    <span class="red"><b>WM</b></span><b>: Mutter (Muffin)</b>
+    <span class="red"><b>WM Theme</b></span><b>: cinnamon (Default)</b>
+    <span class="red"><b>Theme</b></span><b>: Adwaita-dark [GTK2/3]</b>
+    <span class="red"><b>Icons</b></span><b>: Adwaita [GTK2/3]</b>
+    <span class="red"><b>Terminal</b></span><b>: gnome-terminal</b>
+    <span class="red"><b>CPU</b></span><b>: Intel i7-9750H (12) @ 4.500GHz</b>
+    <span class="red"><b>GPU</b></span><b>: Intel CoffeeLake-H GT2 [UHD Graphics 630]</b>
+    <span class="red"><b>GPU</b></span><b>: NVIDIA GeForce GTX 1650 Mobile / Max-Q</b>
+    <span class="red"><b>Memory</b></span><b>: 4762MiB / 15827MiB</b>
+
+    <span style="background-color:#2E3436"><span style="color:#2E3436">   </span></span><span
+        style="background-color:#CC0000"><span class="red">   </span></span><span
+        style="background-color:#4E9A06"><span style="color:#4E9A06">   </span></span><span
+        style="background-color:#C4A000"><span style="color:#C4A000">   </span></span><span
+        style="background-color:#3465A4"><span style="color:#3465A4">   </span></span><span
+        style="background-color:#75507B"><span style="color:#75507B">   </span></span><span
+        style="background-color:#06989A"><span style="color:#06989A">   </span></span><span
+        style="background-color:#D3D7CF"><span style="color:#D3D7CF">   </span></span>
+    <span style="background-color:#555753">  <span style="color:#555753"> </span></span><span
+        style="background-color:#EF2929"><span style="color:#EF2929">   </span></span><span
+        style="background-color:#8AE234"><span style="color:#8AE234">   </span></span><span
+        style="background-color:#FCE94F"><span style="color:#FCE94F">   </span></span><span
+        style="background-color:#729FCF"><span style="color:#729FCF">   </span></span><span
+        style="background-color:#AD7FA8"><span style="color:#AD7FA8">   </span></span><span
+        style="background-color:#34E2E2"><span style="color:#34E2E2">   </span></span><span
+        style="background-color:#EEEEEC"><span style="color:#EEEEEC">   </span></span>
+                </pre>
+            </div>
+        </div>
+        <div>
+            <pre><b>(venv) <span class="green"><b>thiago@debian</b></span>:<span class="blue"><b>~/github.com/thiagogre</b></span>$</b></pre>
+        </div>
+    </main>
+    <main id="wip"></main>
+</body>
+<script src="./canvas.js"></script>
+<script src="./tabs.js"></script>
+
+</html>
