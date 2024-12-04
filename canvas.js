@@ -30,7 +30,6 @@ class Circle {
         this.directionY > 0 ?
             this.y += this.dy : this.y -= this.dy
 
-        // console.log(this.x, this.y, this.directionX, this.directionY, canvas.width, canvas.height)
         if (this.y > canvas.height - this.radius) {
             this.directionY = -1;
         }
@@ -47,7 +46,7 @@ const randomHexColorCode = () => {
     return '#' + n.slice(0, 6);
 }
 
-const circlesQty = 200
+const circlesQty = 50
 const radius = 2
 const circles = []
 for (let i = 0; i < circlesQty; i++) {
@@ -63,7 +62,7 @@ const step = async () => {
 
     for (let i = 0; i < circlesQty; i++) {
         if (isRendering) {
-            await delay(10);
+            await delay(1);
         }
         circles[i] = new Circle(circles[i].radius, circles[i].x, circles[i].y, circles[i].directionX, circles[i].directionY, circles[i].color)
         circles[i].make()
