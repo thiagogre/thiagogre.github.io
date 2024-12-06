@@ -23,8 +23,7 @@ canvas {
     width: 100%;
     height: calc(100% - var(--header_height) - var(--tabs_height));
     position: absolute;
-    z-index: 1;
-    opacity: 0.2;
+    z-index: -1;
     background-color: gray;
     box-shadow: inset 0em 0em 24em 2em rgba(0,0,0,1);
 }
@@ -36,12 +35,26 @@ main {
         100%
         - var(--header_height)
         - var(--tabs_height)
-        - 16px
-        );
-    padding-top: 16px;
+    );
     display: flex;
     flex-direction: column;
     background: #000;
+}
+
+main.translucent {
+    opacity: 0.85;
+}
+
+main:not(.active) {
+    display: none;
+}
+
+main.active {
+    display: flex;
+}
+
+main div:first-child {
+    flex: 1;
 }
 
 header {
@@ -95,16 +108,8 @@ header span {
     border-radius: 50%;
 }
 
-main:not(.active) {
-    display: none;
-}
-
-main.active {
-    display: flex;
-}
-
-main div:first-child {
-    flex: 1;
+.shell-container {
+    padding-top: 16px;
 }
 
 span.green b{
