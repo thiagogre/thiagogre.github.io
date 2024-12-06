@@ -2,15 +2,15 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 class Circle {
-    constructor(radius, x, y, directionX, directionY, color = "yellow") {
+    constructor(radius, x, y, dx = 1, dy = 1, directionX, directionY, color = "yellow") {
         this.radius = radius
         this.x = x;
         this.y = y;
         this.directionX = directionX;
         this.directionY = directionY;
         this.color = color;
-        this.dx = 1;
-        this.dy = 1;
+        this.dx = dx;
+        this.dy = dy;
     }
 
     make() {
@@ -46,31 +46,48 @@ const randomHexColorCode = () => {
     return '#' + n.slice(0, 6);
 }
 
-const circlesQty = 50
-const radius = 2
-const circles = []
-for (let i = 0; i < circlesQty; i++) {
-    const circle = new Circle(radius, canvas.width - Math.random() * canvas.width, canvas.height - Math.random() * canvas.height, 1, 1, randomHexColorCode())
-    circles.push(circle)
+const makeCircle = (radius, dx, dy) => {
+    return new Circle(
+        radius,
+        canvas.width - Math.random() * canvas.width,
+        canvas.height - Math.random() * canvas.height,
+        dx,
+        dy,
+        1,
+        1,
+        randomHexColorCode()
+    )
 }
 
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+const circlesQty = 100
+const circles = [makeCircle(1)]
 
-let isRendering = true
 const step = async () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    for (let i = 0; i < circlesQty; i++) {
-        if (isRendering) {
-            await delay(1);
-        }
-        circles[i] = new Circle(circles[i].radius, circles[i].x, circles[i].y, circles[i].directionX, circles[i].directionY, circles[i].color)
+    circles.forEach((_, i) => {
+        circles[i] = new Circle(circles[i].radius, circles[i].x, circles[i].y, circles[i].dx, circles[i].dy, circles[i].directionX, circles[i].directionY, circles[i].color)
         circles[i].make()
         circles[i].move()
-    }
+    })
 
-    isRendering = false
     requestAnimationFrame(step);
 };
+
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+(async () => {
+    let radius = 2
+
+    for (let i = 0; circles.length <= circlesQty; i++) {
+        circles.push(makeCircle(radius, (1 / radius) * 2, (1 / radius) * 2))
+
+        if (radius <= 32 && i % 10 === 0) {
+            ++radius;
+        }
+
+        await delay(500)
+    }
+})()
 
 window.requestAnimationFrame(step);
