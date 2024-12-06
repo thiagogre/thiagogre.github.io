@@ -40,8 +40,10 @@ if ([tabs, contentTabs].every(Boolean)) {
             switch (e.code) {
                 case "ArrowRight":
                     handleOnHorizontalArrowPress(index < tabs.length - 1 ? index + 1 : 0)
+                    break;
                 case "ArrowLeft":
                     handleOnHorizontalArrowPress(index > 0 ? index - 1 : tabs.length - 1)
+                    break;
                 default:
                     return
             }
