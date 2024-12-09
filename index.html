@@ -19,7 +19,7 @@
         <span>Help</span>
     </header>
     <div id="tabs">
-        <div class="tab" data-id="neofetch">
+        <div class="tab active" data-id="neofetch">
             <div><span>~/github.com/thiagogre</span></div>
             <div><span>x</span></div>
         </div>
@@ -31,13 +31,13 @@
             <div><span>~/documents/paper</span></div>
             <div><span>x</span></div>
         </div>
-        <div class="tab active" data-id="repos">
+        <div class="tab" data-id="repos">
             <div><span>~/documents/repos</span></div>
             <div><span>x</span></div>
         </div>
     </div>
     <canvas id="canvas"></canvas>
-    <main id="neofetch" class="translucent">
+    <main id="neofetch" class="translucent active">
         <div class="shell-container">
             <b>(venv)</b> <span class="green"><b>thiago@debian</b></span>:<span
                 class="blue"><b>~/github.com/thiagogre</b></span><b>$ neofetch</b>
@@ -104,7 +104,7 @@
     <main id="paper">
         <iframe title="Paper" width="100%" height="100%" frameborder="0" src="./paper.pdf"></iframe>
     </main>
-    <main id="repos" class="translucent active">
+    <main id="repos" class="translucent">
         <div class="cards">
             <div class="card">
                 <div class="card-header">
