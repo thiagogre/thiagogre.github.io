@@ -1,6 +1,18 @@
 :root {
-    --header_height: 32px;
-    --tabs_height: 48px;
+    --header-height: 32px;
+    --tabs-height: 48px;
+
+
+    --color-black-primary: #000000;
+    --color-black-primary-translucent: rgba(0, 0, 0, 0.85);
+    --color-black-secondary: #222222;
+    --color-black-tertiary: #343434;
+
+    --color-white-primary: #FFFFFF;
+
+    --color-red: #CC0000;
+    --color-green: #4E9A06;
+    --color-blue: #3465A4;
 }
 
 * {
@@ -10,8 +22,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
 }
 
 h1,h2,h3,h4,h5,h6,p,span {
@@ -20,8 +30,8 @@ h1,h2,h3,h4,h5,h6,p,span {
 }
 
 canvas {
-    width: 100%;
-    height: calc(100% - var(--header_height) - var(--tabs_height));
+    width: 100vw;
+    height: calc(100vh - var(--header-height) - var(--tabs-height));
     position: absolute;
     z-index: -1;
     background-color: gray;
@@ -33,16 +43,16 @@ main {
     width: 100%;
     height: calc(
         100%
-        - var(--header_height)
-        - var(--tabs_height)
+        - var(--header-height)
+        - var(--tabs-height)
     );
     display: flex;
     flex-direction: column;
-    background: #000;
+    background: var(--color-black-primary);
 }
 
 main.translucent {
-    opacity: 0.85;
+    background: var(--color-black-primary-translucent)
 }
 
 main:not(.active) {
@@ -53,31 +63,27 @@ main.active {
     display: flex;
 }
 
-main div:first-child {
-    flex: 1;
-}
-
 header {
-    height: var(--header_height);
+    height: var(--header-height);
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0 8px ;
-    background-color: #000;
+    background-color: var(--color-black-primary);
 }
 
 header span {
     margin-right: 16px;
     font-size: 16px;
-    color: white;
+    color: var(--color-white-primary);
 }
 
 #tabs {
-    height: var(--tabs_height);
+    height: var(--tabs-height);
     display: flex;
     flex-direction: row;
-    background-color: #222222;
-    color: #ffffff;
+    background-color: var(--color-black-secondary);
+    color: var(--color-white-primary);
 }
 
 .tab {
@@ -87,9 +93,8 @@ header span {
 }
 
 .tab.active {
-    border-bottom: 8px solid #3465A4;
-    background-color: #343434;
-    
+    border-bottom: 8px solid var(--color-blue);
+    background-color: var(--color-black-tertiary);
 }
 
 .tab div:first-child {
@@ -109,19 +114,20 @@ header span {
 }
 
 .shell-container {
+    flex: 1;
     padding-top: 16px;
 }
 
 span.green b{
-    color: #4E9A06;
+    color: var(--color-green);
 }
 
 span.blue b{
-    color: #3465A4;
+    color: var(--color-blue);
 }
 
 span.red b {
-    color: #CC0000;
+    color: var(--color-red);
 }
 
 .row {
@@ -147,5 +153,57 @@ span.red b {
 
 b {
     font-size: 24px;
-    color: white;
+    color: var(--color-white-primary);
+}
+
+.cards {
+    display: grid;
+    gap: 16px;
+    grid-template: auto / auto auto auto;
+    padding: 16px;
+    color: var(--color-white-primary);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 1px solid var(--color-black-secondary);
+    border-radius: 8px;
+    background-color: var(--color-black-tertiary);
+}
+
+.card > .card-header {
+}
+
+.card > .card-header > a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--color-green);
+}
+
+.card > .card-body {
+    flex: 1;
+    padding: 24px 0 16px 0;
+}
+
+.card > .card-footer {
+    
+}
+
+.card > .card-footer > .badges {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.card > .card-footer > .badges > span {
+    padding: 4px 8px;
+    margin-right: 16px;
+    margin-top: 8px;
+    border: 1px;
+    border-radius: 16px;
+    color: var(--color-white-primary);
+    background-color: var(--color-blue);
 }
